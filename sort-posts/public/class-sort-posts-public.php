@@ -61,18 +61,6 @@ class Sort_Posts_Public {
 	 */
 	public function enqueue_styles() {
 
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Sort_Posts_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Sort_Posts_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/plugin-name-public.css', array(), $this->version, 'all' );
 
 	}
@@ -84,20 +72,28 @@ class Sort_Posts_Public {
 	 */
 	public function enqueue_scripts() {
 
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Sort_Posts_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Sort_Posts_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/plugin-name-public.js', array( 'jquery' ), $this->version, false );
 
 	}
+
+	/**
+	 * set default sort order.
+	 *
+	 * @since    1.0.0
+	 * @param      string    $query       Main wordpress query.
+	 * @param      string    $order_category    exclude all categories but this one.
+	 * @param      string    $orderby    how to sort.
+	 * @param      string    $order    ASC or DESC.
+	 * 
+	 */
+	function adjust_default_sort_order_by_category($query, $order_category = 'homepage', $orderby = 'post_date', $order = 'DESC'){
+		if ( ! is_admin() && $query->is_main_query() ) {
+				$query->set( 'category_name', $order_category );
+				$query->set( 'orderby', $orderby );
+				$query->set( 'order', $order);
+		}
+	}
+
+	add_action( 'pre_get_posts', 'adjust_default_sort_order_by_category' );
 
 }
