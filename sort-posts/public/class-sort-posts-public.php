@@ -81,19 +81,20 @@ class Sort_Posts_Public {
 	 *
 	 * @since    1.0.0
 	 * @param      string    $query       Main wordpress query.
-	 * @param      string    $order_category    exclude all categories but this one.
 	 * @param      string    $orderby    how to sort.
 	 * @param      string    $order    ASC or DESC.
 	 * 
 	 */
-	function adjust_default_sort_order_by_category($query, $order_category = 'homepage', $orderby = 'post_date', $order = 'DESC'){
-		if ( ! is_admin() && $query->is_main_query() ) {
-				$query->set( 'category_name', $order_category );
-				$query->set( 'orderby', $orderby );
-				$query->set( 'order', $order);
+	function adjust_default_sort_order_by_category($query, $orderby = 'post_date', $order = 'DESC'){
+		if ( $query->is_main_query() && !is_admin() ) {
+			$query->set('orderby', $orderby);    
+			$query->set('order', $order); 
 		}
 	}
 
-	add_action( 'pre_get_posts', 'adjust_default_sort_order_by_category' );
-
+	function template_override($template) {
+		if (is_front_page()) {
+			return WP_PLUGIN_DIR . '/public/partials/sort-posts-public-display.php';
+		}
+	}	
 }

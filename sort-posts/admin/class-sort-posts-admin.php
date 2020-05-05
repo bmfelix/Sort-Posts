@@ -6,8 +6,8 @@
  * @link       http://bradfelix.com
  * @since      1.0.0
  *
- * @package    Sort_Post
- * @subpackage Sort_Post/admin
+ * @package    Sort_Posts
+ * @subpackage Sort_Posts/admin
  */
 
 /**
@@ -16,11 +16,11 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the admin-specific stylesheet and JavaScript.
  *
- * @package    Sort_Post
- * @subpackage Sort_Post/admin
+ * @package    Sort_Posts
+ * @subpackage Sort_Posts/admin
  * @author     Brad Felix <bradfelix1@gmail.com>
  */
-class Sort_Post_Admin {
+class Sort_Posts_Admin {
 
 	/**
 	 * The ID of this plugin.
@@ -65,10 +65,10 @@ class Sort_Post_Admin {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Sort_Post_Loader as all of the hooks are defined
+		 * defined in Sort_Posts_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Sort_Post_Loader will then create the relationship
+		 * The Sort_Posts_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
@@ -88,10 +88,10 @@ class Sort_Post_Admin {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Sort_Post_Loader as all of the hooks are defined
+		 * defined in Sort_Posts_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Sort_Post_Loader will then create the relationship
+		 * The Sort_Posts_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
