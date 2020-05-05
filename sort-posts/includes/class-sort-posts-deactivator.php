@@ -3,11 +3,11 @@
 /**
  * Fired during plugin deactivation
  *
- * @link       http://example.com
+ * @link       http://bradfelix.com
  * @since      1.0.0
  *
- * @package    Plugin_Name
- * @subpackage Plugin_Name/includes
+ * @package    Sort_Posts
+ * @subpackage Sort_Posts/includes
  */
 
 /**
@@ -16,11 +16,11 @@
  * This class defines all code necessary to run during the plugin's deactivation.
  *
  * @since      1.0.0
- * @package    Plugin_Name
- * @subpackage Plugin_Name/includes
- * @author     Your Name <email@example.com>
+ * @package    Sort_Posts
+ * @subpackage Sort_Posts/includes
+ * @author     Brad Felix <bradfelix1@gmail.com>
  */
-class Plugin_Name_Deactivator {
+class Sort_Posts_Deactivator {
 
 	/**
 	 * Short Description. (use period)

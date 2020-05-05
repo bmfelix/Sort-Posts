@@ -3,11 +3,11 @@
 /**
  * Register all actions and filters for the plugin
  *
- * @link       http://example.com
+ * @link       http://bradfelix.com
  * @since      1.0.0
  *
- * @package    Plugin_Name
- * @subpackage Plugin_Name/includes
+ * @package    Sort_Posts
+ * @subpackage Sort_Posts/includes
  */
 
 /**
@@ -17,11 +17,11 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    Plugin_Name
- * @subpackage Plugin_Name/includes
- * @author     Your Name <email@example.com>
+ * @package    Sort_Posts
+ * @subpackage Sort_Posts/includes
+ * @author     Brad Felix <bradfelix1@gmail.com>
  */
-class Plugin_Name_Loader {
+class Sort_Posts_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.

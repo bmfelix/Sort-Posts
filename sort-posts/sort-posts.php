@@ -18,7 +18,7 @@
  * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
  * Version:           1.0.0
  * Author:            Your Name or Your Company
- * Author URI:        http://example.com/
+ * Author URI:        http://bradfelix.com/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       plugin-name
@@ -43,7 +43,7 @@ define( 'SORT_POSTS', '1.0.0' );
  */
 function activate_sort_posts() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-sort-posts-activator.php';
-	Plugin_Name_Activator::activate();
+	Sort_Posts_Activator::activate();
 }
 
 /**
@@ -52,7 +52,7 @@ function activate_sort_posts() {
  */
 function deactivate_sort_posts() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-sort-posts-deactivator.php';
-	Plugin_Name_Deactivator::deactivate();
+	Sort_Posts_Deactivator::deactivate();
 }
 
 register_activation_hook( __FILE__, 'activate_sort_posts' );
